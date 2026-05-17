@@ -7,13 +7,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <button class="btn" id="themeToggle">&#9790;</button>
         <section>
             <h1>Сайт-портфолио</h1>
             <p>Привет! Я Алёна - начинающий веб-разработчик.</p>
             <p>Создаю простые, красивые и удобные сайты. Открыта к небольшим заказам.</p>
+            <nav class="nav-menu">
+                <a href="#skills" >Навыки</a>
+                <a href="#projects">Проекты</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
         </section>
         <div class="menu-contener">
-        <div class="card">
+        <div class="card" id="scills">
             <h3>Что я умею:</h3>
             <ul>
                 <li>Верстаю сайты (html, css)</li>
@@ -22,12 +28,12 @@
                 <li>Выкладываю сайты в интернет (GitHab Pages)</li>
             </ul>
         </div>
-        <div  class="card">
+        <div  class="card" id="projects">
             <h3>Мои проекты</h3>
             <a class="card-btn" href="index.html">Этот сайт</a>
             <a class="card-btn" href="https://pzpz1635-crypto.github.io/cafe-site">Сайт кафе</a>
         </div>
-        <div class="card">
+        <div class="card" id="contacts">
             <h3>Контакты</h3>
             <p class="card-btn"  style="cursor: context-menu;">Почта: pzpz1635@gmail.com</p>
             <a href="https://t.me/Bozenkaaaaa" class="card-btn">Написать мне в Telegram</a>
@@ -37,5 +43,16 @@
         <fotter style="text-align: center; margin-top: 30px; padding: 20px;">
             <p>&copy; 2026  Алёна. Все права защищены.</p>
         </fotter>
+        <script>
+            document.getElementById('themeToggle').addEventListener('click', function(){
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')){
+                    this.textContent = '☀️';
+                }
+                else{
+                    this.textContent = '🌙';
+                }
+            })
+        </script>
     </body>
 </html>
