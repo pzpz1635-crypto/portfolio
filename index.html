@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Портфолио</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <button class="btn" id="themeToggle">🌙</button>
+        <section>
+            <h1>Сайт-портфолио</h1>
+            <p>Привет! Я Алёна - начинающий веб-разработчик.</p>
+            <p>Создаю простые, красивые и удобные сайты. Открыта к небольшим заказам.</p>
+            <nav class="nav-menu">
+                <a href="#skills" >Навыки</a>
+                <a href="#projects">Проекты</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+        </section>
+        <div class="menu-contener">
+        <div class="card" id="scills">
+            <h3>Что я умею:</h3>
+            <ul>
+                <li>Верстаю сайты (html, css)</li>
+                <li>Делаю адаптив под телефоны</li>
+                <li>Подключаю JavaScript (кнопки, формы) </li>
+                <li>Выкладываю сайты в интернет (GitHab Pages)</li>
+            </ul>
+        </div>
+        <div  class="card" id="projects">
+            <h3>Мои проекты</h3>
+            <a class="card-btn" href="index.html">Этот сайт</a>
+            <a class="card-btn" href="https://pzpz1635-crypto.github.io/cafe-site">Сайт кафе</a>
+        </div>
+        <div class="card" id="contacts">
+            <h3>Контакты</h3>
+            <p class="card-btn"  style="cursor: context-menu;">Почта: pzpz1635@gmail.com</p>
+            <a href="https://t.me/Bozenkaaaaa" class="card-btn">Написать мне в Telegram</a>
+        </div>
+        </div>
+        <div class="contact-form">
+        <h2>Напиши мне</h2>
+        <from action="https://fromsubmit.co/pzpz1635@gmail.com" method="POST">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" placeholder="Введите имя" required>
+            <label for="email">Ваш email</label>
+            <input type="email" id="email" name="email" placeholder="Введите email" required>
+            <label for="message">Сообщение</label>
+            <textarea id="massage" name="massage" rows="4" placeholder="Введите сообщение" required></textarea>
+            <input type="hidden" name="_next" value="./thanks.html">
+            <button type="submit">Отправить</button>
+        </from>
+        </div>
+        <fotter style="text-align: center; margin-top: 30px; padding: 20px;">
+            <p>&copy; 2026  Алёна. Все права защищены.</p>
+        </fotter>
+        <script>
+            document.getElementById('themeToggle').addEventListener('click', function(){
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')){
+                    this.textContent = '☀️';
+                }
+                else{
+                    this.textContent = '🌙';
+                }
+            })
+        </script>
+    </body>
+</html>
