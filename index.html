@@ -41,7 +41,7 @@
         </div>
         <div class="contact-form">
         <h2>Напиши мне</h2>
-        <form action="https://formsubmit.co/pzpz1635@gmail.com" method="POST">
+        <form id="contactForm">
             <label for="name">Ваше имя</label>
             <input type="text" id="name" name="name" placeholder="Введите имя" required>
             <label for="email">Ваш email</label>
@@ -65,6 +65,25 @@
                     this.textContent = '🌙';
                 }
             })
+            document.getElementById('contactForm').addEventListener('submit', function(e){
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const massage = document.getElementById('massage').value;
+
+                const text = 'Новая заявка с портфолио!%0A%0A Имя: ${name}%0A Email:${email}%0A Сообщение:${message}';
+
+                const token = '8926813329:AANf_mR9xji1xNtEMFzkffxore187fAwjPw';
+                const chatId = '5793028269';
+                fetch('https://api.telegram.org/bot${token}/sendMessege?chat_id=${chatId}$text=${text}')
+                .then(()=>{
+                    alert('Спасибо! Я получила твоё сообщение.');
+                    this.reset();
+                })
+                .catch(()=>{
+                    alert('Ошибка попробуйте позже');
+                });
+            });
         </script>
     </body>
 </html>
