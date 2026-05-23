@@ -64,25 +64,36 @@
                     this.textContent = '🌙';
                 }
             })
-            document.getElementById('contactForm').addEventListener('submit', function(e){
-                e.preventDefault();
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const massage = document.getElementById('massage').value;
-
-                const text = 'Новая заявка с портфолио!%0A%0A Имя: ${name}%0A Email:${email}%0A Сообщение:${message}';
-
-                const token = '8926813329:AANf_mR9xji1xNtEMFzkffxore187fAwjPw';
-                const chatId = '5793028269';
-                fetch('https://api.telegram.org/bot${token}/sendMessege?chat_id=${chatId}$text=${text}')
-                .then(()=>{
+            d<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        const text = `Новая заявка с портфолио! Имя: ${name}. Email: ${email}. Сообщение: ${message}`;
+        
+        const token = '8926813329:AAHf_mR9xji1xNtEMFzkffxore187fAwjPw';
+        const chatId = '5792028269';
+        
+        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
+        
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
                     alert('Спасибо! Я получила твоё сообщение.');
-                    this.reset();
-                })
-                .catch(()=>{
-                    alert('Ошибка попробуйте позже');
-                });
+                    document.getElementById('contactForm').reset();
+                } else {
+                    alert('Ошибка! Попробуй позже.');
+                }
+            })
+            .catch(() => {
+                alert('Ошибка! Попробуй позже.');
             });
+    });
+</script>
         </script>
     </body>
 </html>
