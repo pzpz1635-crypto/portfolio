@@ -64,36 +64,32 @@
                     this.textContent = '🌙';
                 }
             })
-            d<script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
         
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
         
-        const text = `Новая заявка с портфолио! Имя: ${name}. Email: ${email}. Сообщение: ${message}`;
+                const text = `Новая заявка с портфолио! Имя: ${name}. Email: ${email}. Сообщение: ${message}`;
         
-        const token = '8926813329:AAHf_mR9xji1xNtEMFzkffxore187fAwjPw';
-        const chatId = '5792028269';
+                const url = 'https://api.telegram.org/bot' + '8821705781:AAGbUvtw7CgNElZsSz0F-EElPJ_QlXcWZq4' + '/sendMessage?chat_id=5792028269&text=' + encodeURIComponent(text);
         
-        const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
-        
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                if (data.ok) {
-                    alert('Спасибо! Я получила твоё сообщение.');
-                    document.getElementById('contactForm').reset();
-                } else {
+                fetch(url)
+                .then(response => response.json())
+                    .then(data => {
+                    if (data.ok) {
+                        alert('Спасибо! Я получила твоё сообщение.');
+                        document.getElementById('contactForm').reset();
+                    } else {
+                        alert('Ошибка! Попробуй позже.');
+                    }
+                })
+                .catch(() => {
                     alert('Ошибка! Попробуй позже.');
-                }
-            })
-            .catch(() => {
-                alert('Ошибка! Попробуй позже.');
+                });
             });
-    });
-</script>
+
         </script>
     </body>
 </html>
