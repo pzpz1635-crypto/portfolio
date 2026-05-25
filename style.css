@@ -33,7 +33,7 @@ section p{
     padding: 20px;
     margin: 30px auto;
     border-radius: 15px;
-    box-shadow:  0 4px 8px rgb(0, 0, 0.2);
+    box-shadow:  0 4px 8px rgb(0, 0, 0);
     transition: transform 0.3s, color 0.3s, background 0.3s;
 }
 .card:hover{
@@ -59,7 +59,7 @@ section p{
     border-radius: 15px;
     color: #261400;
     text-align: center;
-    transition: color 0.3, background 0.3s;
+    transition: color 0.3s, background 0.3s;
     cursor: pointer;
 }
 .card-btn:hover{
@@ -68,6 +68,19 @@ section p{
 } 
 .nav-menu{
     display: none;
+}
+.hero-btn{
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+}
+.hero-btn a{
+    display: inline-block;
+    margin: 5px 15px;
+    text-decoration: none;
+    color: #ff8800;
+    font-weight: bold;
+    font-size: 18px;
 }
 #themeToggle{
     position: fixed;
@@ -103,11 +116,22 @@ section p{
 }
 .dark-mode .card{
     background: #333;
+    transition: none;
 }
 .dark-mode .card h3{
     color: #ff8800;
 }
 .dark-mode .card li{
+    color: #ddd;
+}
+.dark-mode .card-1{
+    background: #333;
+    transition: none;
+}
+.dark-mode .card-1 h3{
+    color: #ff8800;
+}
+.dark-mode .card-1 p{
     color: #ddd;
 }
 .dark-mode .card-btn{
@@ -190,6 +214,52 @@ section p{
     text-align: center;
     color: #261400;
 }
+.btn-up{
+    position: fixed;
+    bottom: 20px;
+    border-radius: 50%;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: #ff8800;
+    color: white;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.btn-up:hover{
+    background: #261400;
+}
+.card-1{
+    border-radius: 15px;
+    background: white;
+    color:#261400;
+    margin: 25px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-1 p{
+    font-size: 22px;
+    padding: 10px;
+    margin: 10px;
+    color: #261400;
+}
+.card-1 li{
+    color: #ff8800;
+    font-size: 22px;
+}
+.card-1 h2{
+    text-align: center;
+    color: #ff8800;
+    font-size: 30px;
+}
+.menu-contener-1{
+    display: block;
+    flex-wrap: wrap;
+    padding: auto;
+}
 @media (max-width:768px){
     section{
         display: block;
@@ -210,6 +280,12 @@ section p{
        width: 90%;
        height: auto;
        margin: 10px auto;
+    }
+    .card-1{
+       width: 88%;
+       max-width: 700px;
+       height: auto;
+       margin: 15px auto;
     }
     .nav-menu{
         display: block;
