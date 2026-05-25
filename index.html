@@ -44,7 +44,7 @@
         </div>
         <div class="contact-form">
         <h2>Напиши мне</h2>
-        <form id="contactForm">
+        <form action="https://qform.link/form_alFIkyRRcIukL6GtvHA6jz7YX8ATXE5R" method="POST">
             <label for="name">Ваше имя</label>
             <input type="text" id="name" name="name" placeholder="Введите имя" required>
             <label for="email">Ваш email</label>
@@ -68,34 +68,6 @@
                     this.textContent = '🌙';
                 }
             })
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Кнопка работает')
-                
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-                
-                const text = `Новая заявка с портфолио! Имя: ${name}. Email: ${email}. Сообщение: ${message}`;
-                
-                const part1 = '8821705781:AAGbUvtw7CgN';
-                const part2 = 'ElZsSz0F-EElPJ_QlXcWZq4';
-                const url = `https://api.telegram.org/bot${part1}${part2}/sendMessage?chat_id=5792028269&text=${encodeURIComponent(text)}`;
-                
-                fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.ok) {
-                            alert('Спасибо! Я получила твоё сообщение.');
-                            document.getElementById('contactForm').reset();
-                        } else {
-                            alert('Ошибка! Попробуй позже.');
-                        }
-                    })
-                    .catch(() => {
-                        alert('Ошибка! Попробуй позже.');
-                    });
-            });
             function scrollToTop() {
                 window.scrollTo({top: 0, behavior:'smooth'});
             }
